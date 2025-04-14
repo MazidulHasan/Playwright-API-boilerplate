@@ -125,6 +125,9 @@ test.describe('DummyJSON API Automation', () => {
     expect(createResponse.ok()).toBeTruthy();
     const responseData = await createResponse.json();
 
+    console.log("Response Data:", JSON.stringify(responseData, null, 2));
+    
+
     const isValid = validate(responseData);
     if (!isValid) {
       console.error('User Creation Validation Errors:', ajv.errorsText(validate.errors));
