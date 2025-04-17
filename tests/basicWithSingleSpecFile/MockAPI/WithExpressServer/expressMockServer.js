@@ -1,8 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const multer = require('multer');
+const path = require('path');
 
 const app = express();
 app.use(bodyParser.json());
+const upload = multer({ dest: 'tests/basicWithSingleSpecFile/MockAPI/WithExpressServer/uploadedFiles/' });
 
 app.post('/api/login', (req, res) => {
   const { username, password } = req.body;
@@ -25,6 +28,22 @@ app.post('/api/login', (req, res) => {
 
   return res.status(401).json({ error: 'Invalid credentials' });
 });
+
+app.post('/api/register',upload.single('image'), (req, res) => {
+  console.log('From request body',req.body);
+  console.log('upload image',req.file);
+  
+
+  const { fname, lname, email, password, country, region, city, phone, age, gender, image } = req.body;
+
+  if (!fname) {
+    return res.status(400).json({ error: 'Fname Required' });
+  }
+
+  return res.json({ message: 'Registration successful' });
+})
+
+
 
 const PORT = 3001;
 app.listen(PORT, () => console.log(`Mock server running on port ${PORT}`));
