@@ -28,11 +28,11 @@ export const generateCreateData = (overrides = {}) => {
     category,
     ...overrides
   };
-
   // Handle field dependencies
-  if (status === 'active') {
+  if (baseData.status == 'active') {
     baseData.activationDate = faker.date.recent().toISOString();
-  } else if (status === 'inactive') {
+
+  } else if (baseData.status == 'inactive') {
     baseData.deactivationReason = faker.lorem.sentence();
   }
 

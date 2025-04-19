@@ -11,6 +11,7 @@
   },
   "scripts": {},
   "dependencies": {
+    "cors": "^2.8.5",
     "multer": "^1.4.5-lts.2"
   }
 }
