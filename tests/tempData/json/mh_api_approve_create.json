@@ -1,0 +1,39 @@
+{
+    "externalResourceId": "test10099",
+    "medicationName": "ASPIRIN-OMEPRAZOLE DR 81-40 MG test10099",
+    "clientIdentifier": "IDF-SQANY-MEC2GHSGTEMQV",
+    "drugCode": "73457-415-80",
+    "drugCodingSystem": "NDC",
+    "strength": "26.0",
+    "strengthUnit":"mg",
+    "medicationType": 2,
+    "formOfDosage": "tablet",
+
+    "timingQuantityList": [
+        {
+            "tqNumber":1,
+            "giveAmount": "1",
+            "measurementUnit": "Tablet",
+            "frequency": "1 X DAILY",
+            "beginDate": "01/19/2025",
+            "beginTime": "05:00 am",
+            "endDate": "10/19/2025",
+            "endTime": "04:00 am",
+            "instruction": "Take 1 Tablet",
+            "repeatIntervalUnit": "Daily",
+            "repeatInterval": "1",
+            "daysInWeek": "",
+            "daysInMonth": "",
+            "dailyFrequency":0
+        }
+    ],
+    "route": "Topical",
+    "administrationMethod": "Oral Administration",
+    "administrationDevice": "Mouth",
+    "routeInstruction": "Clean up before taking",
+    "homeMedication": true,
+    "prescriptionDrug": false,
+    "purpose": "sample purpose",
+    "sideEffects": "sample side sideEffects",
+    "comments": "sample comments Update"
+}

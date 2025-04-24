@@ -48,7 +48,7 @@ app.post('/api/login', (req, res) => {
 });
 
 // POST /api/resources
-app.post('/api/resources', (req, res) => {
+app.post('/api/createUser', (req, res) => {
   const data = req.body;
   const { valid, errors } = resourceSchema.validate(data);
 
@@ -64,7 +64,7 @@ app.post('/api/resources', (req, res) => {
 });
 
 // PUT /api/resources/:id
-app.put('/api/resources/:id', (req, res) => {
+app.put('/api/updateUser/:id', (req, res) => {
   const data = req.body;
   const { valid, errors } = updateSchema.validate(data);
 
@@ -79,12 +79,12 @@ app.put('/api/resources/:id', (req, res) => {
 });
 
 // Any unsupported method
-app.all('/api/resources', (req, res) => {
+app.all('/api/createUser', (req, res) => {
   if (req.method !== 'POST') {
     return res.status(405).send();
   }
 });
-app.all('/api/resources/:id', (req, res) => {
+app.all('/api/updateUser/:id', (req, res) => {
   if (req.method !== 'PUT') {
     return res.status(405).send();
   }
